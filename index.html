@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pratham — Portfolio</title>
+<meta name="description" content="Portfolio of Pratham, a graduate student in software engineering focused on systems and tooling.">
 <link rel="stylesheet" href="styles.css">
-<style>section{scroll-margin-top:57px}</style>
 </head>
 <body style="background:#F4F1EA;color:#3D3733">
 
-<header style="position:sticky;top:0;z-index:10;background:#F4F1EA;border-bottom:1px solid #C9C0B6;padding:16px 40px;display:flex;align-items:baseline;justify-content:space-between;gap:32px;animation:fi-fade 320ms cubic-bezier(0.22,0.61,0.36,1) both">
+<header class="site-header" style="position:sticky;top:0;z-index:10;background:#F4F1EA;border-bottom:1px solid #C9C0B6;display:flex;align-items:baseline;justify-content:space-between;gap:32px;animation:fi-fade 320ms cubic-bezier(0.22,0.61,0.36,1) both">
 <a href="#top" style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#14110E;text-decoration:none">Your Name</a>
 <nav style="display:flex;gap:32px">
 <a href="#projects" class="nav-link">Projects</a>
@@ -18,11 +18,11 @@
 </nav>
 </header>
 
-<section id="top" style="padding:72px 40px 0">
-<div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:72px;align-items:start">
+<section id="top" class="page-margin" style="padding-top:72px">
+<div class="hero-grid" style="max-width:1200px;margin:0 auto;display:grid;gap:72px;align-items:start">
 <div>
 <div style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B635C;margin-bottom:32px;animation:fi-rise 420ms cubic-bezier(0.22,0.61,0.36,1) 40ms both">Graduate student · Software engineering</div>
-<h1 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:104px;line-height:0.98;letter-spacing:-0.025em;color:#14110E;max-width:14ch;animation:fi-rise 420ms cubic-bezier(0.22,0.61,0.36,1) 100ms both">Hi, I'm Pratham</h1>
+<h1 class="hero-display" style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:104px;line-height:0.98;letter-spacing:-0.025em;color:#14110E;max-width:14ch;animation:fi-rise 420ms cubic-bezier(0.22,0.61,0.36,1) 100ms both">Hi, I'm Pratham</h1>
 <p style="margin:32px 0 0;font-size:16px;line-height:1.72;letter-spacing:-0.01em;color:#3D3733;max-width:68ch;animation:fi-rise 420ms cubic-bezier(0.22,0.61,0.36,1) 160ms both">I build systems tooling as coursework and then keep maintaining it. Three things worth reading below; the rest is on GitHub.</p>
 <div style="display:flex;align-items:center;gap:24px;margin-top:64px;flex-wrap:wrap;animation:fi-rise 420ms cubic-bezier(0.22,0.61,0.36,1) 220ms both">
 <a class="btn btn-primary" href="https://github.com/">GitHub</a>
@@ -34,14 +34,14 @@
 <div style="display:grid;gap:8px"><span style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B635C">Status</span><span style="font-size:13px;line-height:1.45;color:#3D3733">Open to internships</span></div>
 </div>
 </div>
-<img src="assets/figures/david.png" alt="Engraved study after Michelangelo's David" style="display:block;width:300px;max-width:100%;margin-top:8px;mix-blend-mode:multiply;animation:fi-fade 640ms cubic-bezier(0.22,0.61,0.36,1) 200ms both">
+<img class="hero-figure" src="assets/figures/david.png" alt="Engraved study after Michelangelo's David" style="display:block;width:300px;max-width:100%;margin-top:8px;mix-blend-mode:multiply;animation:fi-fade 640ms cubic-bezier(0.22,0.61,0.36,1) 200ms both">
 </div>
 <div style="margin-top:128px;position:relative;z-index:0">
 <img src="assets/figures/ornithopter.png" alt="Engraved flying-machine study" style="display:block;width:100%;max-width:1400px;margin:0 auto -22%;mix-blend-mode:multiply;animation:fi-fade 720ms cubic-bezier(0.22,0.61,0.36,1) 340ms both">
 </div>
 </section>
 
-<section id="projects" style="position:relative;z-index:1;background:#0E0C0A;color:#EDE9E1;padding:160px 40px">
+<section id="projects" class="page-margin" style="position:relative;z-index:1;background:#0E0C0A;color:#EDE9E1;padding-top:160px;padding-bottom:160px">
 <div style="max-width:1200px;margin:0 auto">
 <div data-reveal style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#A39B92;margin-bottom:16px">001 — Selected work</div>
 <div data-reveal style="display:flex;align-items:baseline;justify-content:space-between;gap:32px;flex-wrap:wrap">
@@ -50,7 +50,7 @@
 </div>
 <div style="height:1px;background:#33302C;margin:32px 0 64px"></div>
 
-<article id="project-01" data-reveal style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:64px;align-items:start;scroll-margin-top:89px">
+<article id="project-01" data-reveal class="project-row" style="display:grid;gap:64px;align-items:start;scroll-margin-top:89px">
 <div style="display:grid;gap:16px">
 <div style="background:#1C1917;border-radius:14px;aspect-ratio:16 / 10;display:grid;place-items:center;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#A39B92">Screenshot</div>
 <div style="font-size:12.5px;line-height:1.6;color:#A39B92">Fig. 1 — Placeholder. Replace with a real screenshot.</div>
@@ -72,7 +72,7 @@
 </div>
 </article>
 
-<article id="project-02" data-reveal style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:64px;align-items:start;scroll-margin-top:89px;margin-top:96px;border-top:1px solid #33302C;padding-top:64px">
+<article id="project-02" data-reveal class="project-row-rev" style="display:grid;gap:64px;align-items:start;scroll-margin-top:89px;margin-top:96px;border-top:1px solid #33302C;padding-top:64px">
 <div style="display:grid;gap:16px;padding-top:8px">
 <div style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#A39B92">No. 02</div>
 <h3 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:36px;line-height:1.15;letter-spacing:-0.012em;color:#EDE9E1">project-two</h3>
@@ -94,7 +94,7 @@
 </div>
 </article>
 
-<article id="project-03" data-reveal style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:64px;align-items:start;scroll-margin-top:89px;margin-top:96px;border-top:1px solid #33302C;padding-top:64px">
+<article id="project-03" data-reveal class="project-row" style="display:grid;gap:64px;align-items:start;scroll-margin-top:89px;margin-top:96px;border-top:1px solid #33302C;padding-top:64px">
 <div style="display:grid;gap:16px">
 <div style="background:#1C1917;border-radius:14px;aspect-ratio:16 / 10;display:grid;place-items:center;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#A39B92">Screenshot</div>
 <div style="font-size:12.5px;line-height:1.6;color:#A39B92">Fig. 3 — Placeholder. Replace with a real screenshot.</div>
@@ -143,12 +143,12 @@
 </div>
 </section>
 
-<section id="about" style="padding:160px 40px 72px">
+<section id="about" class="page-margin" style="padding-top:160px;padding-bottom:72px">
 <div style="max-width:1200px;margin:0 auto">
 <div data-reveal style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B635C;margin-bottom:16px">002 — About</div>
 <h2 data-reveal style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:60px;line-height:1.06;letter-spacing:-0.02em;color:#14110E">About</h2>
 <div style="height:1px;background:#C9C0B6;margin:32px 0 72px"></div>
-<div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:72px;align-items:start">
+<div class="about-grid" style="display:grid;gap:72px;align-items:start">
 <div style="display:grid;gap:64px">
 <div data-reveal style="max-width:68ch;display:grid;gap:16px;font-size:16px;line-height:1.72;letter-spacing:-0.01em;color:#3D3733">
 <p style="margin:0">I am a graduate student in software engineering. Most of what I write starts as a course assignment and then keeps going, because the interesting part usually begins after the grade.</p>
@@ -159,14 +159,14 @@
 <footer style="margin-top:16px;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B635C">On the work</footer>
 </blockquote>
 </div>
-<div data-reveal>
+<div data-reveal class="about-figure">
 <figure class="fi-figure"><img src="assets/figures/scholar.png" alt="Engraved scholar at a writing desk" width="400" style="width:400px;max-width:100%"></figure>
 </div>
 </div>
 </div>
 </section>
 
-<section id="contact" style="background:#0E0C0A;color:#EDE9E1;padding:72px 40px 64px">
+<section id="contact" class="page-margin" style="background:#0E0C0A;color:#EDE9E1;padding-top:72px;padding-bottom:64px">
 <div style="max-width:1200px;margin:0 auto">
 <div class="fi-ornament inverted" style="margin-bottom:72px"><img src="assets/ornaments/compass.png" alt="Engraved compass ornament"></div>
 <div data-reveal style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#A39B92;margin-bottom:16px">003 — Contact</div>

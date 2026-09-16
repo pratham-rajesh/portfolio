@@ -7,16 +7,26 @@ export function initReveal() {
   const setup = () => {
     const nodes = document.querySelectorAll('[data-reveal]');
     if (!nodes.length) return;
+    // will-change is set only for the duration of one transition and cleared
+    // on transitionend — holding it on every node for the page's whole life
+    // pins that many compositor layers at once, and Chrome has been seen to
+    // leave one of them unpainted after a scroll (content stuck at opacity:0
+    // or a stale frame despite computed style reporting opacity:1).
+    const clearWillChange = (e) => { if (e.propertyName === 'opacity') e.target.style.willChange = 'auto'; };
     const hide = (el, from) => {
+      el.style.willChange = 'opacity, transform';
       el.style.transition = 'opacity ' + OUT + 'ms ease-out, transform ' + OUT + 'ms ease-out';
       el.style.opacity = '0';
       el.style.transform = 'translateY(' + (from > 0 ? DIST : -DIST) + 'px)';
+      el.addEventListener('transitionend', clearWillChange, { once: true });
     };
     const show = (el, delay) => {
+      el.style.willChange = 'opacity, transform';
       el.style.transition =
         'opacity ' + IN + 'ms ' + EASE + ' ' + delay + 'ms, transform ' + IN + 'ms ' + EASE + ' ' + delay + 'ms';
       el.style.opacity = '1';
       el.style.transform = 'translateY(0)';
+      el.addEventListener('transitionend', clearWillChange, { once: true });
     };
     // Geometry is the single source of truth: every pass re-measures, so a
     // stale flag can never leave a visible block blank.
@@ -48,7 +58,6 @@ export function initReveal() {
         }
       });
     };
-    nodes.forEach((n) => { n.style.willChange = 'opacity, transform'; });
     reconcile(false);
     let queued = false;
     const onScroll = () => {
