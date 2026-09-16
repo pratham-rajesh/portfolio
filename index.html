@@ -115,24 +115,9 @@
 </article>
 
 <div data-reveal style="margin-top:128px;border-top:1px solid #33302C;padding-top:40px">
-<div style="display:flex;align-items:baseline;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:32px">
-<div style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#A39B92">Contributions — last 12 months</div>
-<div style="font-size:13px;line-height:1.45;color:#EDE9E1;font-feature-settings:'tnum' 1">1,284 commits</div>
-</div>
+<div style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#A39B92;margin-bottom:32px">Contributions — last 12 months</div>
 <div style="overflow-x:auto;padding-bottom:8px">
-<div style="width:739px;max-width:100%;display:flex;justify-content:space-between;margin-bottom:10px;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#A39B92">
-<span>Sep</span><span>Nov</span><span>Jan</span><span>Mar</span><span>May</span><span>Jul</span><span>Sep</span>
-</div>
-<div id="contribution-grid" style="display:grid;grid-auto-flow:column;grid-template-rows:repeat(7,11px);grid-auto-columns:11px;gap:3px;width:max-content"></div>
-</div>
-<div style="display:flex;align-items:center;gap:8px;margin-top:24px;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#A39B92">
-<span>Less</span>
-<span style="width:11px;height:11px;background:#1C1917"></span>
-<span style="width:11px;height:11px;background:#332F2B"></span>
-<span style="width:11px;height:11px;background:#4D4842"></span>
-<span style="width:11px;height:11px;background:#79726A"></span>
-<span style="width:11px;height:11px;background:#B7AFA5"></span>
-<span>More</span>
+<img src="https://ghchart.rshah.org/14110E/pratham-rajesh" alt="Pratham's GitHub contribution graph, last 12 months" style="display:block;width:739px;max-width:100%;filter:invert(1) sepia(0.14) brightness(1.04)" loading="lazy">
 </div>
 </div>
 
@@ -191,26 +176,6 @@
 <script type="module">
 import { initReveal } from './reveal.js';
 initReveal();
-
-const levels = ['#1C1917', '#332F2B', '#4D4842', '#79726A', '#B7AFA5'];
-const grid = document.getElementById('contribution-grid');
-const frag = document.createDocumentFragment();
-for (let w = 0; w < 53; w++) {
-  for (let d = 0; d < 7; d++) {
-    const i = w * 7 + d;
-    const n = (Math.sin(i * 12.9898) * 43758.5453) % 1;
-    let v = Math.abs(n);
-    if (d === 0 || d === 6) v *= 0.45;
-    if (w > 44) v = Math.min(1, v * 1.5);
-    const lvl = v < 0.34 ? 0 : v < 0.55 ? 1 : v < 0.74 ? 2 : v < 0.9 ? 3 : 4;
-    const cell = document.createElement('div');
-    cell.style.width = '11px';
-    cell.style.height = '11px';
-    cell.style.background = levels[lvl];
-    frag.appendChild(cell);
-  }
-}
-grid.appendChild(frag);
 </script>
 </body>
 </html>
