@@ -40,13 +40,13 @@ section{scroll-margin-top:57px}
 /* Pill button — primary / secondary / onDark. Base shared by all three. */
 .btn{display:inline-flex;align-items:center;gap:8px;padding:16px 28px;border-radius:9999px;font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;line-height:1.4;border:1px solid transparent;transition:var(--transition-hover);cursor:pointer}
 .btn-primary{background:var(--ink-press);color:var(--paper-laid)}
-.btn-primary:hover{background:var(--ink-worn)}
-.btn-primary:active{background:var(--ink-graphite)}
+.btn-primary:hover{background:var(--ink-worn);color:var(--paper-laid)}
+.btn-primary:active{background:var(--ink-graphite);color:var(--paper-laid)}
 .btn-secondary{background:transparent;color:var(--ink-press);border-color:var(--paper-rule)}
-.btn-secondary:hover{border-color:var(--ink-press)}
+.btn-secondary:hover{border-color:var(--ink-press);color:var(--ink-press)}
 .btn-secondary:active{border-color:var(--ink-graphite);color:var(--ink-graphite)}
 .btn-onDark{background:var(--chalk);color:var(--press)}
-.btn-onDark:hover{background:var(--chalk-soft)}
+.btn-onDark:hover{background:var(--chalk-soft);color:var(--press)}
 
 /* Figure — framed engraving */
 figure.fi-figure{border:1px solid var(--paper-rule);padding:32px;display:inline-block}
