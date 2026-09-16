@@ -1,0 +1,75 @@
+/* Foundry Impression — design tokens (ported from the Claude Design system) */
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root{
+  --ink-press:#14110E;
+  --ink-worn:#3D3733;
+  --ink-graphite:#6B635C;
+  --paper-laid:#F4F1EA;
+  --paper-card:#E9E4DA;
+  --paper-rule:#C9C0B6;
+  --press:#0E0C0A;
+  --press-soft:#1C1917;
+  --press-rule:#33302C;
+  --chalk:#EDE9E1;
+  --chalk-soft:#A39B92;
+
+  --font-serif-display:"Instrument Serif","Iowan Old Style",Georgia,serif;
+  --font-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+
+  --duration-hover:120ms;
+  --duration-inversion:400ms;
+  --ease-out:cubic-bezier(0.22,0.61,0.36,1);
+  --transition-hover:color var(--duration-hover) var(--ease-out),background-color var(--duration-hover) var(--ease-out),border-color var(--duration-hover) var(--ease-out);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper-laid);color:var(--ink-worn);font-family:var(--font-mono);font-size:14px;line-height:1.68;letter-spacing:-0.005em;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%}
+h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}
+::selection{background:var(--ink-press);color:var(--paper-laid)}
+a{color:var(--ink-press);text-decoration:none}
+a:hover{color:var(--ink-worn)}
+section{scroll-margin-top:57px}
+
+@keyframes fi-rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fi-fade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}html{scroll-behavior:auto}}
+
+/* Pill button — primary / secondary / onDark. Base shared by all three. */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:16px 28px;border-radius:9999px;font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;line-height:1.4;border:1px solid transparent;transition:var(--transition-hover);cursor:pointer}
+.btn-primary{background:var(--ink-press);color:var(--paper-laid)}
+.btn-primary:hover{background:var(--ink-worn)}
+.btn-primary:active{background:var(--ink-graphite)}
+.btn-secondary{background:transparent;color:var(--ink-press);border-color:var(--paper-rule)}
+.btn-secondary:hover{border-color:var(--ink-press)}
+.btn-secondary:active{border-color:var(--ink-graphite);color:var(--ink-graphite)}
+.btn-onDark{background:var(--chalk);color:var(--press)}
+.btn-onDark:hover{background:var(--chalk-soft)}
+
+/* Figure — framed engraving */
+figure.fi-figure{border:1px solid var(--paper-rule);padding:32px;display:inline-block}
+figure.fi-figure img{mix-blend-mode:multiply}
+
+/* Ornament — centered engraved mark */
+.fi-ornament{display:flex;justify-content:center}
+.fi-ornament img{width:150px;height:auto}
+.fi-ornament.inverted img{filter:invert(1) sepia(0.14) brightness(1.04)}
+
+/* Stack chip */
+.chip{border:1px solid var(--paper-rule);border-radius:2px;padding:4px 8px;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-graphite);transition:border-color 120ms ease,color 120ms ease}
+.chip:hover{border-color:var(--ink-press);color:var(--ink-press)}
+.chip-dark{border-color:var(--press-rule);color:var(--chalk-soft)}
+.chip-dark:hover{border-color:#4D4842;color:var(--chalk)}
+
+.nav-link{font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-graphite);text-decoration:none;border-bottom:1px solid transparent;transition:color 120ms ease,border-color 120ms ease;outline-offset:4px}
+.nav-link:hover{color:var(--ink-press);border-bottom:1px solid var(--ink-press)}
+.nav-link:active{color:var(--ink-graphite);border-bottom:1px solid var(--ink-graphite)}
+
+.footer-link{color:var(--chalk);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 120ms ease,color 120ms ease}
+.footer-link:hover{border-bottom:1px solid var(--chalk)}
+.footer-link:active{color:var(--chalk-soft);border-bottom:1px solid var(--chalk-soft)}
+
+.case-link{color:var(--ink-press);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 120ms ease,color 120ms ease}
+.case-link:hover{color:var(--ink-press);border-bottom:1px solid var(--ink-press)}
