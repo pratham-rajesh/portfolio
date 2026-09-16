@@ -85,11 +85,12 @@ figure.fi-figure img{mix-blend-mode:multiply}
 .fixed-col-300{grid-template-columns:300px minmax(0,1fr)}
 .fixed-col-320{grid-template-columns:320px minmax(0,1fr)}
 .fixed-col-320-rev{grid-template-columns:minmax(0,1fr) 340px}
+.auto-fit-320{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
 
 @media (max-width:720px){
   .site-header{padding:14px 20px;flex-wrap:wrap;gap:12px 20px}
   .page-margin{padding-left:20px;padding-right:20px}
-  .hero-grid,.about-grid,.fixed-col-300,.fixed-col-320,.fixed-col-320-rev{grid-template-columns:minmax(0,1fr) !important}
+  .hero-grid,.about-grid,.fixed-col-300,.fixed-col-320,.fixed-col-320-rev,.auto-fit-320{grid-template-columns:minmax(0,1fr) !important}
   .project-row,.project-row-rev{grid-template-columns:minmax(0,1fr) !important}
   .hero-display{font-size:clamp(44px,13vw,72px) !important}
   .hero-figure{order:-1;width:200px !important;margin:0 auto !important}
