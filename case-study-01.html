@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>project-one — Case study</title>
-<meta name="description" content="Case study: project-one, a schema-diff CLI that refuses to generate a migration it cannot reverse.">
+<title>urc-teleoperation — Case study</title>
+<meta name="description" content="Mission control for SJSU Robotics’ Mars rover, where only one station can drive.">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
@@ -25,11 +25,11 @@
 <img src="assets/figures/thinker-idle.png" alt="Engraved seated figure, thinking" style="display:block;width:300px;max-width:100%;mix-blend-mode:multiply;animation:fi-fade 640ms cubic-bezier(0.22,0.61,0.36,1) 200ms both">
 <div style="animation:fi-rise 420ms cubic-bezier(0.22,0.61,0.36,1) 120ms both">
 <div style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B635C;margin-bottom:16px">001 — The problem</div>
-<h1 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:60px;line-height:1.06;letter-spacing:-0.02em;color:#14110E;max-width:24ch;text-wrap:pretty">A migration you cannot undo is a decision you cannot review.</h1>
+<h1 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:60px;line-height:1.06;letter-spacing:-0.02em;color:#14110E;max-width:24ch;text-wrap:pretty">A rover that obeys every laptop obeys no one.</h1>
 <div style="height:1px;background:#C9C0B6;margin:32px 0"></div>
 <div style="display:grid;gap:16px;max-width:68ch;font-size:16px;line-height:1.72;letter-spacing:-0.01em;color:#3D3733">
-<p style="margin:0">Placeholder paragraph — describe the situation that made this worth building. What broke, how often, and who had to be woken up when it did.</p>
-<p style="margin:0">Placeholder paragraph — the constraint that ruled out the obvious fix. Two paragraphs is the right length before naming the project.</p>
+<p style="margin:0">We drive our Mars rover from a base station over radio. Several laptops connect at once: a driver, an arm operator, and people watching cameras and science.</p>
+<p style="margin:0">The rover accepted drive commands from any of them. Two live gamepads meant two command streams on one bus. A team rule can’t stop that, so the rover has to.</p>
 </div>
 </div>
 </div>
@@ -41,23 +41,27 @@
 <div data-reveal class="fixed-col-320-rev" style="display:grid;gap:72px;align-items:start">
 <div>
 <div data-reveal style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B635C;margin-bottom:16px">002 — The project</div>
-<h2 data-reveal style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:60px;line-height:1.06;letter-spacing:-0.02em;color:#14110E">project-one</h2>
+<h2 data-reveal style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:60px;line-height:1.06;letter-spacing:-0.02em;color:#14110E">urc-teleoperation</h2>
 <div style="height:1px;background:#C9C0B6;margin:32px 0"></div>
-<p style="margin:0;max-width:68ch;font-size:16px;line-height:1.72;letter-spacing:-0.01em;color:#3D3733">A schema-diff CLI that refuses to generate a migration it cannot reverse. Placeholder copy — one sentence on what it does and one on what it will not do.</p>
+<p style="margin:0;max-width:68ch;font-size:16px;line-height:1.72;letter-spacing:-0.01em;color:#3D3733">Browser mission control for SJSU’s URC rover, backed by a Python server on the rover. I built drive-control ownership and moved the science pipeline from the browser to the rover.</p>
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:32px">
-<span class="chip">Rust</span>
+<span class="chip">Python</span>
 <span style="font-size:11px;letter-spacing:0.18em;color:#6B635C">·</span>
-<span class="chip">Postgres</span>
+<span class="chip">React</span>
+<span style="font-size:11px;letter-spacing:0.18em;color:#6B635C">·</span>
+<span class="chip">Socket.IO</span>
+<span style="font-size:11px;letter-spacing:0.18em;color:#6B635C">·</span>
+<span class="chip">CAN</span>
 </div>
 <dl style="margin:32px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,auto));column-gap:64px;row-gap:8px;border-top:1px solid #C9C0B6;padding-top:24px;font-size:13px;line-height:1.45;color:#3D3733;font-feature-settings:'tnum' 1">
-<div style="display:grid;gap:8px"><dt style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B635C">Stars</dt><dd>128</dd></div>
-<div style="display:grid;gap:8px"><dt style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B635C">Commits</dt><dd>1,284</dd></div>
-<div style="display:grid;gap:8px"><dt style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B635C">First commit</dt><dd>2024-11-02</dd></div>
-<div style="display:grid;gap:8px"><dt style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B635C">Last commit</dt><dd>2026-08-30</dd></div>
+<div style="display:grid;gap:8px"><dt style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B635C">Team</dt><dd>SJSU Robotics</dd></div>
+<div style="display:grid;gap:8px"><dt style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B635C">Role</dt><dd>Mission Control</dd></div>
+<div style="display:grid;gap:8px"><dt style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B635C">Shipped</dt><dd>#206</dd></div>
+<div style="display:grid;gap:8px"><dt style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B635C">Next</dt><dd>#193</dd></div>
 </dl>
 <div style="display:flex;align-items:center;gap:24px;margin-top:40px;flex-wrap:wrap">
-<a class="btn btn-primary" href="https://github.com/">Repo</a>
-<a class="btn btn-secondary" href="https://github.com/">Docs</a>
+<a class="btn btn-primary" href="https://github.com/SJSURoboticsTeam/urc-teleoperation-2026">Repo</a>
+<a class="btn btn-secondary" href="https://github.com/">Live demo</a>
 </div>
 </div>
 <img src="assets/figures/thinker-doing.png" alt="Engraved seated figure working at a laptop" style="display:block;width:340px;max-width:100%;mix-blend-mode:multiply">
@@ -72,27 +76,27 @@
 <div style="height:1px;background:#33302C;margin:32px 0 64px"></div>
 <div data-reveal class="fixed-col-320" style="display:grid;gap:64px;align-items:start">
 <div style="display:grid;gap:16px">
-<div style="background:#1C1917;border-radius:14px;aspect-ratio:16 / 10;display:grid;place-items:center;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#A39B92">Diagram</div>
-<div style="font-size:12.5px;line-height:1.6;color:#A39B92">Fig. 1 — Placeholder. Replace with the plan pipeline.</div>
+<img src="assets/projects/rover-control-diagram.png" alt="Diagram: Station A passes the owner check and drive lock to reach the motors over CAN; Stations B and C are dropped; the science log sends state to all stations" width="1586" height="992" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;aspect-ratio:16 / 10;object-fit:cover;border-radius:14px;background:#1C1917">
+<div style="font-size:12.5px;line-height:1.6;color:#A39B92">Fig. 1 — Many stations, one owner of the drive bus.</div>
 </div>
 <div style="display:grid;gap:16px;max-width:68ch;font-size:16px;line-height:1.72;letter-spacing:-0.01em;color:#EDE9E1">
-<p style="margin:0">Placeholder paragraph — the shape of the system in plain terms: what reads the schema, what holds the intermediate representation, what writes the plan.</p>
-<p style="margin:0">Placeholder paragraph — the part that was hard. Name the specific failure mode you had to design around rather than the general category.</p>
-<p style="margin:0">Placeholder paragraph — how the reversibility check actually works, and what it costs at runtime.</p>
+<p style="margin:0">The rover tracks which station owns drive. Every drive command is checked against that owner before it reaches the motors. The UI locks drive for everyone else, but leaves the camera mast free.</p>
+<p style="margin:0">The hard part was release. Stop first and a late packet can restart the motors. So release clears the owner, then sends stop under the drive lock. A dropped laptop does the same.</p>
+<p style="margin:0">Science state used to live in one browser tab and vanished on refresh. Now the rover owns each site investigation and logs every reading, so all stations see the same data.</p>
 </div>
 </div>
 <div data-reveal style="margin-top:96px;border-top:1px solid #33302C;padding-top:64px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:64px">
 <div style="display:grid;gap:16px">
 <div style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#A39B92">What it refuses to do</div>
-<p style="margin:0;font-size:14px;line-height:1.68;color:#EDE9E1">Placeholder — the refusal, stated once and kept.</p>
+<p style="margin:0;font-size:14px;line-height:1.68;color:#EDE9E1">A drive command from any station that doesn’t hold control.</p>
 </div>
 <div style="display:grid;gap:16px">
 <div style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#A39B92">What it assumes</div>
-<p style="margin:0;font-size:14px;line-height:1.68;color:#EDE9E1">Placeholder — the assumption that makes the refusal affordable.</p>
+<p style="margin:0;font-size:14px;line-height:1.68;color:#EDE9E1">One trusted team on one network, so a socket session is identity enough.</p>
 </div>
 <div style="display:grid;gap:16px">
 <div style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#A39B92">What it leaves out</div>
-<p style="margin:0;font-size:14px;line-height:1.68;color:#EDE9E1">Placeholder — the feature people ask for and will not get.</p>
+<p style="margin:0;font-size:14px;line-height:1.68;color:#EDE9E1">Forced takeover. The E-stop covers emergencies.</p>
 </div>
 </div>
 </div>
@@ -104,8 +108,8 @@
 <h2 data-reveal style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:60px;line-height:1.06;letter-spacing:-0.02em;color:#14110E">Afterward</h2>
 <div style="height:1px;background:#C9C0B6;margin:32px 0 72px"></div>
 <div data-reveal style="display:grid;gap:16px;max-width:68ch;font-size:16px;line-height:1.72;letter-spacing:-0.01em;color:#3D3733">
-<p style="margin:0">Placeholder paragraph — the decision you reversed and what it cost to reverse it.</p>
-<p style="margin:0">Placeholder paragraph — what you would keep, unchanged, if you started again tomorrow.</p>
+<p style="margin:0">I’d revisit identity. Control is tied to the socket session, so a one-second radio blip stops the rover and drops control. A stable station ID with a grace window would fix that.</p>
+<p style="margin:0">I’d keep the shape: ownership in one small module, and the server as the only source of truth. That’s why the PR merged cleanly.</p>
 </div>
 </div>
 </section>
@@ -118,7 +122,7 @@
 </div>
 <div data-reveal style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:72px">
 <a class="btn btn-onDark" href="index.html#project-01">All projects</a>
-<a class="btn btn-onDark" href="https://github.com/">Repo ↗</a>
+<a class="btn btn-onDark" href="https://github.com/SJSURoboticsTeam/urc-teleoperation-2026">Repo ↗</a>
 </div>
 <div style="height:1px;background:#33302C;margin-bottom:32px"></div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;font-size:12.5px;line-height:1.6;color:#A39B92">
